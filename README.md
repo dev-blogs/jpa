@@ -10,4 +10,8 @@
 
 <b>simple-JPA-HibernateEnvers</b> - простой <b>JPA</b> проект аудита и отслеживания версий для сущностей.</br>
 Запускается командой <b>mvn exec:java</b></br>
-Описание проекта <a href="" target="_blank">Аудит и отслеживание версий для сущностных классов в Spring</a></br>
+Описание проекта <a href="http://dev-blogs.com/audit-and-version-control-in-spring/" target="_blank">Аудит и отслеживание версий для сущностных классов в Spring</a></br>
+
+<b>mvc-example</b> - простой spring-mvc проект.</br>
+Деплоится на веб сервер и там запускается
+Описание проекта <a href="" target="_blank">Основы Spring MVC</a></br>
