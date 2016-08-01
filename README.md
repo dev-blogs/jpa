@@ -13,5 +13,5 @@
 Описание проекта <a href="http://dev-blogs.com/audit-and-version-control-in-spring/" target="_blank">Аудит и отслеживание версий для сущностных классов в Spring</a></br>
 
 <b>mvc-example</b> - простой spring-mvc проект.</br>
-Деплоится на веб сервер и там запускается
+Деплоится на веб сервер и там запускаетс.</br>
 Описание проекта <a href="" target="_blank">Основы Spring MVC</a></br>
