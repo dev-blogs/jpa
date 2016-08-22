@@ -23,5 +23,11 @@ CREATE TABLE providers (
  
 CREATE TABLE items_providers (
     item_id INT UNSIGNED NOT NULL,
-    provider_id INT UNSIGNED NOT NULL
+    provider_id INT UNSIGNED NOT NULL,
+    FOREIGN KEY (item_id) REFERENCES items (id)
+		ON DELETE NO ACTION
+		ON UPDATE NO ACTION,
+	FOREIGN KEY (provider_id) REFERENCES providers (id)
+		ON DELETE NO ACTION
+		ON UPDATE NO ACTION
 );
