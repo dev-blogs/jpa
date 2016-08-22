@@ -23,11 +23,5 @@ CREATE TABLE providers (
  
 CREATE TABLE items_providers (
     item_id INT UNSIGNED NOT NULL,
-    provider_id INT UNSIGNED NOT NULL,
-    FOREIGN KEY (item_id) REFERENCES items (id)
-        ON DELETE CASCADE
-        ON UPDATE CASCADE,
-    FOREIGN KEY (provider_id) REFERENCES providers (id)
-        ON DELETE CASCADE
-        ON UPDATE CASCADE
+    provider_id INT UNSIGNED NOT NULL
 );

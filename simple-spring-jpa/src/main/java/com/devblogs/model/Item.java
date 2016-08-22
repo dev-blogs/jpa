@@ -18,27 +18,17 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "items")
 public class Item {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
     private Long id;
-      
-    @Column(name = "name")
     private String name;
-      
-    @ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
-    @JoinTable(name = "items_providers",
-                joinColumns={@JoinColumn(name = "item_id")},
-                inverseJoinColumns={@JoinColumn(name = "provider_id")})
     private Set<Provider> providers = new HashSet<Provider>();
-      
-    @ManyToOne
-    @JoinColumn(name = "warehouse_id")
     private Warehouse warehouse;
       
     public Item() {
     }
-  
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
     public Long getId() {
         return id;
     }
@@ -46,7 +36,8 @@ public class Item {
     public void setId(Long id) {
         this.id = id;
     }
-  
+
+    @Column(name = "name")
     public String getName() {
         return name;
     }
@@ -54,7 +45,11 @@ public class Item {
     public void setName(String name) {
         this.name = name;
     }
-  
+ 
+    @ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.DETACH})
+    @JoinTable(name = "items_providers",
+        joinColumns={@JoinColumn(name = "item_id")},
+        inverseJoinColumns={@JoinColumn(name = "provider_id")})
     public Set<Provider> getProviders() {
         return providers;
     }
@@ -62,7 +57,9 @@ public class Item {
     public void setProviders(Set<Provider> providers) {
         this.providers = providers;
     }
-  
+ 
+    @ManyToOne
+    @JoinColumn(name = "warehouse_id")
     public Warehouse getWarehouse() {
         return warehouse;
     }

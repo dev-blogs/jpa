@@ -30,7 +30,7 @@ public class Provider {
     private Long id;
     @Column(name = "name")
     private String name;
-    @ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
+    @ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.DETACH})
     @JoinTable(name = "items_providers",
             joinColumns={@JoinColumn(name = "provider_id")},
             inverseJoinColumns={@JoinColumn(name = "item_id")})
