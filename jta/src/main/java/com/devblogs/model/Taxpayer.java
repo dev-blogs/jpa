@@ -55,7 +55,7 @@ public class Taxpayer {
 	
 	@Override
 	public int hashCode() {
-		return 3*id.hashCode() + 5*name.hashCode() + 7*isDebtor.hashCode();
+		return 3*id.hashCode() + 5*name.hashCode() + 7*snils.hashCode() + 11*isDebtor.hashCode();
 	}
 	
 	@Override
