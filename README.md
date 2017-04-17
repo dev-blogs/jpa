@@ -15,3 +15,7 @@
 <b>mvc-example</b> - простой spring-mvc проект.</br>
 Деплоится на веб сервер и там запускается.</br>
 Описание проекта <a href="" target="_blank">Основы Spring MVC</a></br>
+
+<b>jta</b> - простой jta проект.</br>
+Запускается тесты командой <b>mvn test</b></br>
+Описание проекта <a href="http://dev-blogs.com/jta-and-global-transactions/" target="_blank">JTA и распределенные транзакции</a></br>
