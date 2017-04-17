@@ -54,6 +54,23 @@ public class Taxpayer {
 	}
 	
 	@Override
+	public int hashCode() {
+		return 3*id.hashCode() + 5*name.hashCode() + 7*isDebtor.hashCode();
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) return true;
+		if (obj == null) return false;
+		if (getClass() != obj.getClass()) return false;
+		Taxpayer otherTaxpayer = (Taxpayer) obj;
+		return id.equals(otherTaxpayer.id) &&
+				name.equals(otherTaxpayer.name) &&
+				snils.equals(otherTaxpayer.snils) &&
+				isDebtor.equals(otherTaxpayer.isDebtor);
+	}
+	
+	@Override
 	public String toString() {
 		return "[id=" + this.id + ", name=" + this.name + ", snils=" + this.snils + ", isDebtor=" + this.isDebtor + "]";
 	}

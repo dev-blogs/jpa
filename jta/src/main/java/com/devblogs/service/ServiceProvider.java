@@ -4,6 +4,7 @@ import java.util.List;
 import com.devblogs.model.Provider;
 
 public interface ServiceProvider {
+	public void clear();
 	public Provider findById(Long id);
 	public List<Provider> findAll();
 	public Provider save(Provider provider);

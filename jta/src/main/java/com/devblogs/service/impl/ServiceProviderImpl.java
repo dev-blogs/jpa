@@ -4,6 +4,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceException;
+import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 import org.springframework.orm.jpa.JpaSystemException;
 import org.springframework.stereotype.Component;
@@ -19,6 +20,13 @@ public class ServiceProviderImpl implements ServiceProvider {
 	private EntityManager emOur;
 	@PersistenceContext(unitName = "emfTax")
 	private EntityManager emTax;
+	
+	public void clear() {
+		Query ourQuery = emOur.createQuery("DELETE FROM Provider");
+		Query taxQuery = emTax.createQuery("DELETE FROM Taxpayer");
+		ourQuery.executeUpdate();
+		taxQuery.executeUpdate();
+	}
 
 	@Transactional(readOnly = true)
 	public Provider findById(Long id) {

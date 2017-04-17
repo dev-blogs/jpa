@@ -50,6 +50,22 @@ public class Provider {
 	}
 	
 	@Override
+	public int hashCode() {
+		return 3*id.hashCode() + 5*name.hashCode() + 7*isDebtor.hashCode();
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) return true;
+		if (obj == null) return false;
+		if (getClass() != obj.getClass()) return false;
+		Provider otherProvider = (Provider) obj;
+		return id.equals(otherProvider.id) &&
+				name.equals(otherProvider.name) &&
+				isDebtor.equals(otherProvider.isDebtor);
+	}
+
+	@Override
 	public String toString() {
 		return "[id=" + this.id + ", name=" + this.name + ", isDebtor=" + this.isDebtor + "]";
 	}
